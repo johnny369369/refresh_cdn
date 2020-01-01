@@ -20,7 +20,7 @@ class Txy_api(object):
         self.txy_params['Action'] = action
         self.txy_params['Timestamp'] = str(int(time.time()))
         self.txy_params['Nonce'] = random.randint(1, sys.maxsize)
-        self.txy_params['SecretId'] = 'your key id' if product == 'b79' else 'your key id'
+        self.txy_params['SecretId'] = 'your key id' if product == 'your product' else 'your key id'
         self.txy_params['Version'] = '2018-07-09'
 
     def make(self,method='POST'):
