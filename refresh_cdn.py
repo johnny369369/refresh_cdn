@@ -12,7 +12,7 @@ import pysnooper
 #@pysnooper.snoop()
 class Txy_api(object):
     def __init__(self,action=None,product=None):
-        self.secretKey = 'your key' if product == 'b79' else 'your key'
+        self.secretKey = 'your key' if product == 'your product' else 'your key'
         self.cdn_host = 'cdn.api.qcloud.com'
         self.cdn_url = '/v2/index.php'
         self.cdn_api = 'https://cdn.api.qcloud.com/v2/index.php'
@@ -146,14 +146,14 @@ if __name__ == '__main__':
            if result['Code'] == '1':
               print(f'全速云Cdn地址:{refresh_url}刷新url和目录成功')
         elif product == 'txy':
-           if str('domain.com') in str(refresh_url):
+           if str('keywords') in str(refresh_url):
               txy = Txy_api(action='RefreshCdnDir',product='nwf')
               txy.refreshcdn_dir(refresh_url=refresh_url)
-           elif str('domain.com') in str(refresh_url) or str('domain.com') in str(refresh_url):
-              txy = Txy_api(action='RefreshCdnDir',product='ggc')
+           elif str('dkeywords') in str(refresh_url) or str('keywords') in str(refresh_url):
+              txy = Txy_api(action='RefreshCdnDir',product='your product')
               txy.refreshcdn_dir(refresh_url=refresh_url)
            else:
-               txy = Txy_api(action='RefreshCdnDir', product='b79')
+               txy = Txy_api(action='RefreshCdnDir', product='your product')
                txy.refreshcdn_dir(refresh_url=refresh_url)
         else:
             print('没有找到对应CDN产品号')
